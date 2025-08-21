@@ -4,24 +4,26 @@ public class Saldo_e_Tranferencia {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-
         int opc = 0;
         int esc = 0;
         String saida;
-
         Double saldo = 5000.00;
+
+        System.out.printf("Digite seu nome: ");
+        String nome = sc.nextLine();
+
         do {
-            System.out.println("""
+            System.out.printf("""
                     //==================================\\\\
                     ||
-                    ||\tFala lindão!
-                    ||\tOq c manda pra hj meu rei???
+                    ||\tOLá %s!
+                    ||\tEscolha uma opção:
                     ||
                     ||\t1 - Extrato da conta.
                     ||\t2 - Fazer transferencia.
                     ||\t3 - Sair.
                     ||
-                    \\\\==================================//""");
+                    \\\\==================================//\n""", nome);
             esc = sc.nextInt();
             sc.nextLine();
             switch(esc){
@@ -86,13 +88,14 @@ public class Saldo_e_Tranferencia {
                     System.out.printf("""
                                         //========================================\\\\
                                         ||
-                                        ||\tTranferencia realizada com sucessso!
+                                        ||\tTranferencia de R$%.2f
+                                        ||\trealizada com sucessso!
                                         ||
                                         ||\tSeu saldo atual é de R$%.2f
                                         ||
                                         ||(z) - para voltar para o Menu
                                         \\\\========================================//
-                                        """, saldo);
+                                        """, transferir, saldo);
 
                     saida = sc.nextLine();
                     while(!saida.equalsIgnoreCase("z")) {
