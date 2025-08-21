@@ -21,7 +21,8 @@ public class Saldo_e_Tranferencia {
                     ||
                     ||\t1 - Extrato da conta.
                     ||\t2 - Fazer transferencia.
-                    ||\t3 - Sair.
+                    ||\t3 - Fazer deposito.
+                    ||\t4 - Sair.
                     ||
                     \\\\==================================//\n""", nome);
             esc = sc.nextInt();
@@ -71,7 +72,7 @@ public class Saldo_e_Tranferencia {
                                     """);
                     if(transferir > saldo){
                         System.out.printf("""
-                                    //========================================\\\\
+                                    //==================================\\\\
                                     ||
                                     ||\tSaldo insuficiente!
                                     ||\tSeu saldo é de R$%.2f
@@ -104,7 +105,53 @@ public class Saldo_e_Tranferencia {
                     break;
 
                 case 3:
+
+                   System.out.print("""
+                                    //==================================\\\\
+                                    ||
+                                    ||\tQuanto deseja depositar: """);
+                    Double deposito = sc.nextDouble();
                     System.out.print("""
+                                    ||
+                                    \\\\==================================//
+                                    """);
+                    if(deposito < 1){
+                        System.out.printf("""
+                                    //==================================\\\\
+                                    ||
+                                    ||\tValor insuficiente!
+                                    ||\tDeposito minimo de R$1,00
+                                    ||
+                                    ||(z) - para voltar ao Menu.
+                                    \\\\==================================//""", saldo);
+                        saida = sc.nextLine();
+                        while(!saida.equalsIgnoreCase("z")) {
+                            saida = sc.nextLine();
+                        }
+                        break;
+                    }
+                    saldo += deposito;
+                    System.out.printf("""
+                                        //========================================\\\\
+                                        ||
+                                        ||\tDeposito de R$%.2f
+                                        ||\trealizado com sucessso!
+                                        ||
+                                        ||\tSeu saldo atual é de R$%.2f
+                                        ||
+                                        ||(z) - para voltar para o Menu
+                                        \\\\========================================//
+                                        """, deposito, saldo);
+
+                    saida = sc.nextLine();
+                    while(!saida.equalsIgnoreCase("z")) {
+                        saida = sc.nextLine();
+                    }
+
+                    break;
+
+                case 4:
+                    System.out.println("""
                                     //========================================\\\\
                                     ||
                                     ||\tObrigado por usar nossos serviços!
