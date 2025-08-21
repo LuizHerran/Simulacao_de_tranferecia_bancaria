@@ -1,1 +1,3 @@
-Um código simples que simula um extrato de conta mostrando os dados do cliente junto com seu saldo, também é possivel fazer transações até seu dinheiro acabar.
+Simulação de conta bancaria, podendo fazer depositos, tranferencias e ver seu saldo bancario.
+
+O sistema identifica se a sua transferencia é maior que seu saldo, e só permite fazer depositos a cima de R$1,00.
