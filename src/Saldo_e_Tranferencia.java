@@ -17,7 +17,7 @@ public class Saldo_e_Tranferencia {
                     //==================================\\\\
                     ||
                     ||\tOLá %s!
-                    ||\tEscolha uma opção:
+                    ||\tEscolha uma opção: 
                     ||
                     ||\t1 - Extrato da conta.
                     ||\t2 - Fazer transferencia.
